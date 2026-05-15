@@ -634,23 +634,3 @@ Exemplo de resposta:
   ]
 }
 ```
-
-## Limites atuais do projeto
-
-Apesar de ser um bom exemplo para estudo, esse projeto ainda tem algumas limitacoes importantes:
-
-- os dados ficam apenas em memoria
-- nao existe banco de dados real
-- a senha e armazenada em texto puro na memoria
-- nao ha validacao extra, como checagem de email duplicado
-- nao existe suite de testes automatizados
-- a rota de criacao retorna `200`, embora em APIs REST seja comum usar `201 Created`
-
-## Melhorias futuras sugeridas
-
-- adicionar `requirements.txt`
-- criar testes automatizados com `pytest`
-- usar banco de dados real, como SQLite ou PostgreSQL
-- armazenar senha com hash
-- validar email unico
-- retornar `201 Created` na criacao de usuario
