@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cadastro de Usuarios</title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <main class="page">
+    <section class="card">
+      <div class="header">
+        <div>
+          <p class="eyebrow">Frontend simples</p>
+          <h1>Cadastro de usuarios</h1>
+          <p class="subtitle">
+            Tela basica para cadastrar usuarios e listar os itens vindos da API.
+          </p>
+        </div>
+        <span class="badge" id="total-users">0 usuarios</span>
+      </div>
+
+      <form id="user-form" class="form-grid">
+        <label class="field">
+          <span>Nome</span>
+          <input type="text" id="name" name="name" placeholder="Digite o nome" required>
+        </label>
+
+        <label class="field">
+          <span>Email</span>
+          <input type="email" id="email" name="email" placeholder="Digite o email" required>
+        </label>
+
+        <label class="field field-full">
+          <span>Senha</span>
+          <input type="password" id="password" name="password" placeholder="Digite a senha" minlength="4" required>
+        </label>
+
+        <div class="actions">
+          <button type="submit" id="submit-button">Cadastrar</button>
+          <button type="reset" class="secondary-button">Limpar</button>
+          <button type="button" class="secondary-button" id="refresh-button">Atualizar tabela</button>
+        </div>
+      </form>
+
+      <p id="form-message" class="message" aria-live="polite"></p>
+    </section>
+
+    <section class="card">
+      <div class="header header-table">
+        <div>
+          <h2>Itens cadastrados</h2>
+          <p class="subtitle">
+            Quando a API estiver rodando em <code id="api-url-label"></code>, use o botao para carregar os dados.
+          </p>
+        </div>
+      </div>
+
+      <div class="table-wrapper">
+        <table>
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Nome</th>
+              <th>Email</th>
+            </tr>
+          </thead>
+          <tbody id="users-table-body">
+            <tr>
+              <td colspan="3" class="empty-state">API ainda nao iniciada. Clique em Atualizar tabela quando subir o backend.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <script src="./script.js" defer></script>
+</body>
+</html>
